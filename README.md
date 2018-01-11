@@ -27,7 +27,6 @@ Usage of ./firewood-cli:
 ```
 ./firewood-cli -name Index -o index -pkg handler
 
-
 package handler
 
 import (
@@ -38,7 +37,7 @@ import (
 )
 
 type IndexReq struct {
-	dto.Index
+	// dto.Index
 }
 
 // FieldMap implement binding FieldMap interface
@@ -46,7 +45,7 @@ func (r *IndexReq) FieldMap(req *http.Request) binding.FieldMap {
 	return binding.FieldMap{}
 }
 
-//DoProcess 业务逻辑
+//Do http handler
 func (r *IndexReq) Do(res http.ResponseWriter, req *http.Request) (interface{}, int, error) {
 	resp := vo.Index{}
 

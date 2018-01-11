@@ -13,7 +13,7 @@ package {{.Pkg}}
 
 
 type {{.Name}}Req struct{
-	dto.{{.Name}}
+	// dto.{{.Name}}
 }
 
 // FieldMap implement binding FieldMap interface
@@ -21,7 +21,7 @@ func (r *{{.Name}}Req) FieldMap(req *http.Request) binding.FieldMap {
 	return binding.FieldMap{}
 }
 
-//DoProcess 业务逻辑
+//Do http handler
 func (r *{{.Name}}Req) Do(res http.ResponseWriter, req *http.Request) (interface{}, int, error) {
 	resp := vo.{{.Name}}{}
 
